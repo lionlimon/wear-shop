@@ -1,18 +1,33 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <banner
+      :image="mainBanner.image"
+      :title="mainBanner.title"
+      :text="mainBanner.text"
+      :btn-text="mainBanner.btnText"
+      :btn-link="mainBanner.btnLink"
+    />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import Banner from "@/components/banner/banner"
+import bannerImage from '@/assets/images/banner1.jpg'
 
 export default {
   name: 'Home',
-  components: {
-    HelloWorld
+  components: {Banner},
+
+  data() {
+    return {
+      mainBanner: {
+        image: bannerImage,
+        title: 'New collection',
+        text: 'Our easiest chuck-on-and-go staples come with a serious style heritage that’s liberating, sexy, comfy and supremely cool.',
+        btnText: 'Shop new arrivals',
+        btnLink: '/new'
+      }
+    }
   }
 }
 </script>

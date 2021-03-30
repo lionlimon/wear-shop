@@ -1,0 +1,15 @@
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 320px;
+
+  &__svg {
+    display: block;
+    margin: 0;
+  }
+
+  &__path {
+    fill: var(--header-color);
+  }
+}

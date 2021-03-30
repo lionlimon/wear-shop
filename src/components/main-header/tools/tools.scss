@@ -1,0 +1,36 @@
+.tools {
+  display: flex;
+  justify-content: flex-end;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__item {
+    margin-right: 25px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+    }
+
+    &-search {
+      margin-right: 5px;
+      width: 18px;
+      height: 18px;
+    }
+
+    &-wishlist {
+      width: 19px;
+      height: 18px;
+    }
+  }
+}
