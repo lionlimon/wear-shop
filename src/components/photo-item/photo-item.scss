@@ -1,0 +1,24 @@
+.photo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--zoom {
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    &--zoom {
+      transition: transform .8s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

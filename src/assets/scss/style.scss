@@ -8,9 +8,22 @@ body, * {
 
 .container {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1920px;
   padding: 0 25px;
   margin: 0 auto;
+
+  &--no-padding {
+    padding: 0;
+  }
+
+  &--big-padding {
+    padding: 0 75px;
+  }
+}
+
+.full-screen {
+  height: 100vh;
+  min-height: 720px;
 }
 
 .btn {

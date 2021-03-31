@@ -1,12 +1,12 @@
 <template>
   <section
-    class="banner"
-    :style="{ backgroundImage: `url(${image})` }"
+    class="banner full-screen"
     :class="{'banner--dark': dark}"
   >
     <div
       class="container banner__container"
       :class="classes"
+      :style="{ backgroundImage: `url(${image})` }"
     >
       <div class="banner__content">
         <h2 v-if="title" class="banner__title">{{ title }}</h2>
@@ -26,11 +26,11 @@ export default {
       type: String,
       default: ''
     },
-    positionX: {
+    horizontal: {
       type: String,
       default: 'left'
     },
-    positionY: {
+    vertical: {
       type: String,
       default: 'top'
     },
@@ -59,8 +59,8 @@ export default {
   computed: {
     classes() {
       return [
-        `banner__container--${this.positionX}`,
-        `banner__container--${this.positionY}`
+        `banner__container--${this.horizontal}`,
+        `banner__container--${this.vertical}`
       ]
     }
   }
