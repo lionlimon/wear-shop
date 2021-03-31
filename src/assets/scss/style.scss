@@ -18,10 +18,15 @@ body, * {
   margin: 0;
   border: 1px solid #ffffff;
   background-color: #ffffff;
-  color: black;
+  color: #000000;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 48px;
   padding: 0 30px;
+}
+
+.btn--transparent {
+  background-color: transparent;
+  color: #ffffff;
 }

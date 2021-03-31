@@ -9,9 +9,9 @@
       :class="classes"
     >
       <div class="banner__content">
-        <h2 class="banner__title">{{ title }}</h2>
-        <p class="banner__text">{{ text }}</p>
-        <router-link :to="btnLink" class="banner__btn btn btn--transparent">
+        <h2 v-if="title" class="banner__title">{{ title }}</h2>
+        <p v-if="text" class="banner__text">{{ text }}</p>
+        <router-link v-if="btnText && btnLink" :to="btnLink" class="banner__btn btn btn--transparent">
           {{ btnText }}
         </router-link>
       </div>
@@ -26,9 +26,13 @@ export default {
       type: String,
       default: ''
     },
-    position: {
-      type: Object,
-      default: () => {}
+    positionX: {
+      type: String,
+      default: 'left'
+    },
+    positionY: {
+      type: String,
+      default: 'top'
     },
     title: {
       type: String,
@@ -55,8 +59,8 @@ export default {
   computed: {
     classes() {
       return [
-        `banner__container--${this?.position?.x || 'left'}`,
-        `banner__container--${this?.position?.y || 'top'}`
+        `banner__container--${this.positionX}`,
+        `banner__container--${this.positionY}`
       ]
     }
   }
