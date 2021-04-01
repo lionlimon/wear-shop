@@ -1,12 +1,33 @@
 .gallery {
   width: 100%;
 
+  &__container {
+    &--small {
+      height: 100vh;
+      min-height: 720px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+  }
+
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    height: 100%;
 
     &--four {
       grid-template-columns: repeat(4, 1fr);
     }
+  }
+
+  &__title {
+    margin: 0 0 30px;
+    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 0.02em;
   }
 }

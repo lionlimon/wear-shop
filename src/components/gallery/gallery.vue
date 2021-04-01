@@ -1,13 +1,9 @@
 <template>
   <div class="gallery">
-    <div
-      class="container"
-      :class="containerClasses"
-    >
-      <div
-        class="gallery__items"
-        :class="listClasses"
-      >
+    <div class="container" :class="containerClasses">
+      <h2 v-if="title && small" class="gallery__title">{{ title }}</h2>
+
+      <div class="gallery__items" :class="listClasses">
         <router-link
           v-for="(image, key) in images"
           :key="key"
@@ -43,6 +39,10 @@ export default {
     fourItems: {
       type: Boolean,
       default: false
+    },
+    title: {
+      type: String,
+      default: ''
     }
   },
 
@@ -50,14 +50,14 @@ export default {
     return {
       containerClasses: {
         'container--no-padding': this.fullscreen,
-        'container--big-padding': this.small
+        'container--big-padding': this.small,
+        'gallery__container--small': this.small
       },
       listClasses: {
         'gallery__items--four': this.fourItems
       },
       itemClasses: {
-        'full-screen': !this.small,
-        'gallery__item--small': this.small
+        'full-screen': !this.small
       }
     }
   }

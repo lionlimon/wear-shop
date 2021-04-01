@@ -26,18 +26,35 @@
       :btn-text="thirdBanner.btnText"
       :btn-link="thirdBanner.btnLink"
     />
+
+    <gallery :title="secondGalleryTitle" :images="secondGalleryItems" small four-items />
+
+    <banner
+      :image="fourthBanner.image"
+      :title="fourthBanner.title"
+      :text="fourthBanner.text"
+      :btn-text="fourthBanner.btnText"
+      :btn-link="fourthBanner.btnLink"
+      :vertical="fourthBanner.vertical"
+      :horizontal="fourthBanner.horizontal"
+    />
   </div>
 </template>
 
 <script>
 import Banner from "@/components/banner/banner"
+import Gallery from "@/components/gallery/gallery"
 import bannerImage from '@/assets/images/banner1.jpg'
 import secondBannerImage from '@/assets/images/banner2.jpg'
 import thirdBannerImage from '@/assets/images/banner3.jpg'
+import fourthBannerImage from '@/assets/images/banner4.jpg'
 import image1 from '@/assets/images/img1.jpg'
 import image2 from '@/assets/images/img2.jpg'
 import image3 from '@/assets/images/img3.jpg'
-import Gallery from "@/components/gallery/gallery";
+import image4 from '@/assets/images/img4.jpg'
+import image5 from '@/assets/images/img5.jpg'
+import image6 from '@/assets/images/img6.jpg'
+import image7 from '@/assets/images/img7.jpg'
 
 export default {
   name: 'Home',
@@ -81,6 +98,34 @@ export default {
         btnText: 'Shop denim',
         btnLink: '/shop'
       },
+      secondGalleryTitle: 'New arrivals',
+      secondGalleryItems: [
+        {
+          src: image4,
+          link: '#'
+        },
+        {
+          src: image5,
+          link: '#'
+        },
+        {
+          src: image6,
+          link: '#'
+        },
+        {
+          src: image7,
+          link: '#'
+        },
+      ],
+      fourthBanner: {
+        image: fourthBannerImage,
+        title: 'Pray for rock',
+        text: 'Beloved and forever relevant, there’s a convenience factor in a well-built pair of all-in-ones.',
+        btnText: 'Shop collection',
+        btnLink: '/collection',
+        vertical: 'bottom',
+        horizontal: 'right'
+      }
     }
   }
 }
